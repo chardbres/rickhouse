@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/bootstrap';
+
+$whiskey-brown: #b38542;
+$title-color: #fbf9f9;
+
+header {
+  color: $title-color;
+  position: absolute;
+  right: 1vw;
+  z-index: 100;
+}
+
+.bg-dark-p4 {
+  background-color: $whiskey-brown;
+}
