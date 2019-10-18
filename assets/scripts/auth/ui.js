@@ -19,6 +19,7 @@ const onSignInSuccess = responseData => {
 }
 
 const onSignInFailure = () => {
+  store.user = responseData.user
   console.log('Sign-in failure!')
 }
 // ---
@@ -31,6 +32,7 @@ const onPasswordChangeSuccess = () => {
 const onPasswordChangeFailure = () => {
   console.log('Failed to change password!')
 }
+// ---
 
 module.exports = {
   onSignUpSucces,

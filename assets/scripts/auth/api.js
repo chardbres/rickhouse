@@ -10,7 +10,6 @@ const signUp = formData => {
     url: config.apiUrl + '/sign-up',
     data: formData
   })
-  console.log("Got to here!")
 }
 
 // Sign-in api
@@ -20,7 +19,6 @@ const signIn = formData => {
     url: config.apiUrl + '/sign-in',
     data: formData
   })
-  console.log("Got to here!")
 }
 
 // Password change api
@@ -33,7 +31,6 @@ const passwordChange = formData => {
     },
     data: formData
   })
-  console.log("Got to here!")
 }
 
 module.exports = {
