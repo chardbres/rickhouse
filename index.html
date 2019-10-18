@@ -11,10 +11,11 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-    <header>
-      <h1>The Angel's Share</h1>
-    </header>
+      <header>
+        <h1>The Angel's Share</h1>
+      </header>
     <!-- Defines the nav dropdown with the hamburger -->
       <div class="pos-f-t">
         <nav class="navbar navbar-dark bg-dark">
@@ -24,8 +25,29 @@
         </nav>
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
-            <h5 class="text-white h4">Collapsed content</h5>
-            <span class="text-muted">Toggleable via the navbar brand.</span>
+            <!-- Sign-up form -->
+            <form class="sign-up">
+              <input type="text" name="credentials[email]" placeholder="Enter e-mail" />
+              <input type="password" name="credentials[password]" placeholder="Enter password"  />
+              <input type="password" name="credentials[password_confirmation]" placeholder="Re-enter password"  />
+              <button type="submit">Sign Up!</button>
+            </form>
+            <!-- Sign-in form -->
+            <form class="sign-in">
+              <input type="text" name="credentials[email]" placeholder="Enter e-mail" />
+              <input type="password" name="credentials[password]" placeholder="Enter password"  />
+              <button type="submit">Sign In!</button>
+            </form>
+            <!-- Password change form -->
+            <form class="change-password">
+              <input type="password" name="passwords[old]" placeholder="Enter old password..."  />
+              <input type="password" name="passwords[new]" placeholder="Enter new password..."  />
+              <button type="submit">Change Password</button>
+            </form>
+            <!-- Sign-out form -->
+            <form class="sign-out">
+              <button type="submit">Sign Out!</button>
+            </form>
           </div>
         </div>
       </div>
