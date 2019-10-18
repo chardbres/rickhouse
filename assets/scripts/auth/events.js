@@ -28,7 +28,20 @@ const onSignIn = event => {
 }
 // ---
 
+// Password change event handler
+const onPasswordChange = event => {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  api.passwordChange(formData)
+    .then(ui.onPasswordChangeSuccess)
+    .catch(ui.onPasswordChangeFailure)
+}
+// ---
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onPasswordChange
 }

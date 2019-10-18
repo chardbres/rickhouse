@@ -23,9 +23,20 @@ const onSignInFailure = () => {
 }
 // ---
 
+// Password change success and failure UI
+const onPasswordChangeSuccess = () => {
+  console.log('Password changed successfully!')
+}
+
+const onPasswordChangeFailure = () => {
+  console.log('Failed to change password!')
+}
+
 module.exports = {
   onSignUpSucces,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
+  onPasswordChangeSuccess,
+  onPasswordChangeFailure
 }
