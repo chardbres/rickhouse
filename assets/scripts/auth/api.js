@@ -33,8 +33,20 @@ const passwordChange = formData => {
   })
 }
 
+// Sign-out api
+const signOut = formData => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  passwordChange
+  passwordChange,
+  signOut
 }
