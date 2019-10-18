@@ -3,10 +3,15 @@
 $whiskey-brown: #b38542;
 $title-color: #fbf9f9;
 
+h1 {
+  font-family: 'Special Elite', sans-serif;
+}
+
 header {
   color: $title-color;
   position: absolute;
   right: 1vw;
+  top: 1vh;
   z-index: 100;
 }
 
