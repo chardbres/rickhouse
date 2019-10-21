@@ -11,15 +11,15 @@ const makeWhiskey = event => {
   const age = $('.age').value()
   const taste = $('.taste').value()
   const price = $('.price').price()
-
-  onCreate(name, variety, region, age, taste, price)
 }
 
-const onCreate = function (name, variety, region, age, taste, price) {
+const onCreate = function (event) {
   event.preventDefault()
 
-  console.log(name, variety, region, age, taste, price)
-  api.createWhiskey(name, variety, region, age, taste, price)
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log(formData)
+  api.createWhiskey(formData)
     .then(ui.onCreateWhiskeySuccess)
     .catch(ui.onCreateWhiskeyFailure)
 }

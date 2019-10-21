@@ -13,5 +13,5 @@ $(() => {
   $('.change-password').on('submit', authEvents.onPasswordChange)
   $('.sign-out').on('submit', authEvents.onSignOut)
   // CRUD applications
-  $('.submission').on('submit', whiskeyEvents.makeWhiskey)
+  $('.entry-fields').on('submit', whiskeyEvents.makeWhiskey)
 })
