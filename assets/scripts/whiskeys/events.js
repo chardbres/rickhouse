@@ -10,7 +10,6 @@ const onCreate = event => {
 
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   api.createWhiskey(formData)
     .then(ui.onCreateWhiskeySuccess)
     .catch(ui.onCreateWhiskeyFailure)

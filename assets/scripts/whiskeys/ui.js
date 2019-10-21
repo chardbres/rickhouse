@@ -11,6 +11,7 @@ const onCreateWhiskeySuccess = responseData => {
   store.whiskey = responseData.whiskey
   $('.canvas').append(whiskeysPageHtml)
   $('.message').text('...whiskey create successfully.')
+  console.log(responseData)
   console.log(store.whiskey)
 }
 
