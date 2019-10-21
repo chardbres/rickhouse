@@ -16,20 +16,22 @@ const onCreate = event => {
 }
 
 const onGetWhiskies = event => {
+  event.preventDefault()
+
   api.getWhiskies()
     .then(ui.onGetWhiskiesSuccess)
     .catch(ui.onGetWhiskiesFailure)
 }
 
-const onUpdateWhiskey = event => {
-  event.preventDefault()
-
-  const form = event.target
-  const formData = getFormFields(form)
-  api.updateWhiskey(formData)
-    .then(ui.onUpdateSuccess)
-    .catch(ui.onUpdateFailure)
-}
+// const onUpdateWhiskey = event => {
+//   event.preventDefault()
+//
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.updateWhiskey(formData)
+//     .then(ui.onUpdateSuccess)
+//     .catch(ui.onUpdateFailure)
+// }
 
 const onDeleteWhiskey = event => {
   event.preventDefault()

@@ -22,7 +22,8 @@ body {
 
 .canvas {
   background-color: $list-color;
-  width: 60%;
+  font-family: $theme-font;
+  width: 80%;
   height: 80%;
 }
 
@@ -33,7 +34,7 @@ body {
   height: 70vh;
   justify-content: center;
   margin: auto;
-  width: 60vw;
+  width: 100vw;
  }
 
 .entry-fields {
@@ -60,17 +61,14 @@ header {
 }
 
 .message {
-  // border: 1px solid red;
+  color: $list-color;
   display: flex;
   font-family: $theme-font;
+  font-size: 24px;
   font-style: oblique;
   justify-content: center;
   margin: auto;
   width: 100%;
-
-  h2 {
-    color: $list-color;
-  }
 }
 
 form {

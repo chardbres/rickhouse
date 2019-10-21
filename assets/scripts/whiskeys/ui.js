@@ -1,18 +1,14 @@
 'use strict'
 
 const store = require('../store')
-const data = { whiskeys: [] }
-const whiskeysPageTemplate = require('..templates/whiskey-listing.handlebars')
-const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: data.whiskeys })
+const whiskeysPageTemplate = require('../templates/whiskey-listing.handlebars')
 
 // Whiskey creation success and failure UI
 const onCreateWhiskeySuccess = responseData => {
   console.log('Successfully created!')
   store.whiskey = responseData.whiskey
-  $('.canvas').append(whiskeysPageHtml)
-  $('.message').text('...whiskey create successfully.')
+  $('.message').text('...whiskey created successfully.')
   console.log(responseData)
-  console.log(store.whiskey)
 }
 
 const onCreateWhiskeyFailure = () => {
@@ -21,9 +17,13 @@ const onCreateWhiskeyFailure = () => {
 // ---
 
 // Whiskey indexing success and failure UI
-const onGetWhiskiesSuccess = () => {
+const onGetWhiskiesSuccess = responseData => {
   console.log('Got whiskies!')
-  $('.canvas').append(whiskeysPageHtml)
+  store.whiskey = responseData.whiskey
+  console.log(responseData)
+
+  const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: responseData.whiskeys })
+  $('.canvas').html(whiskeysPageHtml)
 }
 
 module.exports = {
