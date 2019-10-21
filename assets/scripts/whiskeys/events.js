@@ -22,7 +22,28 @@ const onGetWhiskies = event => {
     .catch(ui.onGetWhiskiesFailure)
 }
 
+const onUpdateWhiskey = event => {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateWhiskey(formData)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
+}
+
+const onDeleteWhiskey = event => {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  api.deleteWhiskey(formData)
+    .then(ui.onDestroySuccess)
+    .catch(ui.onDestroyFailure)
+}
+
 module.exports = {
   onCreate,
+  onDeleteWhiskey,
   onGetWhiskies
 }
