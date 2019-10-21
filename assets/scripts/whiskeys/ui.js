@@ -6,9 +6,12 @@ const whiskeysPageTemplate = require('..templates/whiskey-listing.handlebars')
 const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: data.whiskeys })
 
 // Whiskey creation success and failure UI
-const onCreateWhiskeySuccess = () => {
+const onCreateWhiskeySuccess = responseData => {
   console.log('Successfully created!')
+  store.whiskey = responseData.whiskey
   $('.canvas').append(whiskeysPageHtml)
+  $('.message').text('...whiskey create successfully.')
+  console.log(store.whiskey)
 }
 
 const onCreateWhiskeyFailure = () => {
