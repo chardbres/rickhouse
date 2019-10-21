@@ -14,4 +14,5 @@ $(() => {
   $('.sign-out').on('submit', authEvents.onSignOut)
   // CRUD applications
   $('.entry-fields').on('submit', whiskeyEvents.onCreate)
+  $('.get-whiskies').on('click', whiskeyEvents.onGetWhiskies)
 })

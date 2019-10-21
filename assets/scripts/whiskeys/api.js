@@ -15,6 +15,18 @@ const createWhiskey = formData => {
   })
 }
 
+// Function indexes the database of whiskies
+const getWhiskies = () => {
+  return $.ajax({
+    url: config.apiUrl + '/whiskeys',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createWhiskey
+  createWhiskey,
+  getWhiskies
 }

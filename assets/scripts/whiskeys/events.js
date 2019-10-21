@@ -4,7 +4,8 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
-const onCreate = function (event) {
+// Script that runs on creation of a new whiskey
+const onCreate = event => {
   event.preventDefault()
 
   const form = event.target
@@ -15,6 +16,13 @@ const onCreate = function (event) {
     .catch(ui.onCreateWhiskeyFailure)
 }
 
+const onGetWhiskies = event => {
+  api.getWhiskies()
+    .then(ui.onGetWhiskiesSuccess)
+    .catch(ui.onGetWhiskiesFailure)
+}
+
 module.exports = {
-  onCreate
+  onCreate,
+  onGetWhiskies
 }

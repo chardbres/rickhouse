@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Whiskies</h2>
+  <ul class="whiskies">
+    {{#each whiskeys as |whiskey|}}
+      <li>
+        {{whiskey.name}}
+        {{whiskey.variety}}
+        {{whiskey.region}}
+        {{whiskey.age}}
+        {{whiskey.taste}}
+        {{whiskey.price}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
