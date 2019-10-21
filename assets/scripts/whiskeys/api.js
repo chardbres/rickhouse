@@ -4,23 +4,14 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 // Function creates a new game on the server
-const createWhiskey = function (name, variety, region, age, taste, price) {
+const createWhiskey = formData => {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/whiskeys',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      'whiskey': {
-        'name': name,
-        'variety': variety,
-        'region': region,
-        'age': age,
-        'taste': taste,
-        'price': price
-      }
-    }
+    data: formData
   })
 }
 
