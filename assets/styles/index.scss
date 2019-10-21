@@ -2,9 +2,49 @@
 
 $whiskey-brown: #b38542;
 $title-color: #fbf9f9;
+$list-color: #fff;
+$theme-font: 'Special Elite', sans-serif;
 
-h1 {
-  font-family: 'Special Elite', sans-serif;
+body {
+  background-color: #000;
+
+  img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.buffer {
+  // border: 3px solid blue;
+  height: 8vh;
+}
+
+.canvas {
+  background-color: $list-color;
+  width: 60%;
+  height: 80%;
+}
+
+.content {
+  align-items: center;
+  // border: 2px solid green;
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  margin: auto;
+  width: 60vw;
+ }
+
+.entry-fields {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  width: 100%;
+
+  input {
+    margin: 0 5px;
+  }
 }
 
 header {
@@ -12,9 +52,45 @@ header {
   position: absolute;
   right: 1vw;
   top: 1vh;
-  z-index: 100;
+  z-index: 1000;
+
+  h1 {
+    font-family: $theme-font;
+  }
+}
+
+.message {
+  // border: 1px solid red;
+  display: flex;
+  font-family: $theme-font;
+  font-style: oblique;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+
+  h2 {
+    color: $list-color;
+  }
 }
 
 form {
   margin: 3px auto;
+}
+
+.main {
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  width: 100%
+}
+
+.pos-f-t {
+  z-index: 50;
+}
+
+.submission {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 10%;
 }

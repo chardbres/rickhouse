@@ -18,11 +18,12 @@
     </head>
 
     <body>
+      <img src='https://lovelaughandphotograph.files.wordpress.com/2013/11/barnwood-background-grey.jpg?w=1200'>
       <header>
         <h1>rickhouse.</h1>
       </header>
     <!-- Defines the nav dropdown with the hamburger -->
-      <div class="pos-f-t">
+      <div class="pos-f-t fixed-top">
         <nav class="navbar navbar-dark bg-dark">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -58,5 +59,29 @@
       </div>
     <!--        End of navbar        -->
 
+    <!-- Start of main content -->
+      <div class="main">
+        <div class="buffer">
+        </div>
+        <div class="content">
+          <div class="canvas">
+
+          </div>
+        </div>
+        <div class="message">
+          <h2>...enter information below to save your whiskey.</h2>
+        </div>
+        <div class="entry-fields">
+          <input type="text" name="whiskey-name" placeholder="Whiskey name" />
+          <input type="text" name="whiskey-name" placeholder="Whiskey type (scotch, etc.)" />
+          <input type="text" name="whiskey-name" placeholder="Whiskey region" />
+          <input type="text" name="whiskey-name" placeholder="Whiskey age" />
+          <input type="text" name="whiskey-name" placeholder="Taste profile" />
+          <input type="text" name="whiskey-name" placeholder="Whiskey price" />
+        </div>
+        <form class="submission">
+          <button type="submit">Submit Whiskey!</button>
+        </form>
+      </div>
     </body>
 </html>
