@@ -1,7 +1,6 @@
-  <h2>Whiskies</h2>
-  <ul class="whiskies">
+  <div class="whiskies overflow-auto">
     {{#each whiskeys as |whiskey|}}
-      <li>
+      <div class="items" style="border: 1px solid gray">
         {{whiskey.id}} -
         NAME: {{whiskey.name}} _
         VARIETY: {{whiskey.variety}} _
@@ -9,6 +8,6 @@
         AGE: {{whiskey.age}} _
         TASTE: {{whiskey.taste}} _
         PRICE: {{whiskey.price}}
-      </li>
+      </div>
     {{/each}}
-  </ul>
+  </div>

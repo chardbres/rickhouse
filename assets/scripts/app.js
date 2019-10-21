@@ -15,4 +15,5 @@ $(() => {
   // CRUD applications
   $('.entry-fields').on('submit', whiskeyEvents.onCreate)
   $('.get-whiskies').on('submit', whiskeyEvents.onGetWhiskies)
+  $('.destroy-whiskey').on('submit', whiskeyEvents.onDeleteWhiskey)
 })

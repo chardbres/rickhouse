@@ -23,7 +23,7 @@ const onGetWhiskiesSuccess = responseData => {
   console.log(responseData)
 
   const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: responseData.whiskeys })
-  $('.canvas').html(whiskeysPageHtml)
+  $('.canvas').hide().html(whiskeysPageHtml).fadeIn(1000)
 }
 
 module.exports = {

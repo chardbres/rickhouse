@@ -28,7 +28,7 @@ const getWhiskies = () => {
 
 const deleteWhiskey = formData => {
   return $.ajax({
-    url: config.apiUrl + '/whiskeys' + formData.whiskey.id,
+    url: config.apiUrl + '/whiskeys/' + formData.whiskey.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

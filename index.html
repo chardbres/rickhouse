@@ -64,12 +64,16 @@
         <div class="buffer">
         </div>
         <div class="content">
-          <div class="canvas">
+          <h1> Your Whiskies.</h1>
+          <div class="canvas overflow-auto">
+            <div class="img-div">
+              <img src='https://images-na.ssl-images-amazon.com/images/I/71D5rtExINL._SX466_.jpg'>
+            </div>
           </div>
         </div>
 
         <div class="message">
-          <p>...enter information below to save your whiskey.</p>
+          <p>Welcome back. Please sign in to view your whiskies.</p>
         </div>
 
         <form class="entry-fields">
@@ -79,10 +83,14 @@
           <input type="text" name="whiskey[age]" placeholder="Whiskey age" />
           <input type="text" name="whiskey[taste]" placeholder="Taste profile" />
           <input type="text" name="whiskey[price]" placeholder="Whiskey price" />
-          <button type="submit">Submit Whiskey!</button>
+          <button type="submit">Submit Whiskey</button>
         </form>
         <form class="get-whiskies">
-          <button type="submit">Get list of whiskies!</button>
+          <button type="submit">Get list of whiskies</button>
+        </form>
+        <form class="destroy-whiskies">
+          <input type="number" name="whiskey[id]" placeholder="Whiskey ID" />
+          <button type="submit">Delete whiskey</button>
         </form>
       </div>
     </body>

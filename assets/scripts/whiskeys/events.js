@@ -23,17 +23,8 @@ const onGetWhiskies = event => {
     .catch(ui.onGetWhiskiesFailure)
 }
 
-// const onUpdateWhiskey = event => {
-//   event.preventDefault()
-//
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.updateWhiskey(formData)
-//     .then(ui.onUpdateSuccess)
-//     .catch(ui.onUpdateFailure)
-// }
-
 const onDeleteWhiskey = event => {
+  console.log('made it this far!')
   event.preventDefault()
 
   const form = event.target
