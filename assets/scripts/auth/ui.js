@@ -5,7 +5,7 @@ const whiskeyUi = require('../whiskeys/ui.js')
 const store = require('../store')
 // Declares a variable to store the original image div for retrieval later
 let divClone = null
-const fadeFunc = () => { $('.auth-message').delay(1000).fadeOut(2000)
+const fadeFunc = () => { $('.auth-message').delay(1000).fadeOut(2000) }
 
 // Sign-up success and failure UI
 const onSignUpSuccess = () => {

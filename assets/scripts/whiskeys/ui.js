@@ -9,7 +9,7 @@ const onCreateWhiskeySuccess = responseData => {
   store.whiskey = responseData.whiskey
   api.getWhiskies()
     .then(onGetWhiskiesSuccess)
-  $('.message').text('whiskey created successfully.')
+  $('.message').text('whiskey created. ')
   $('.entry-fields').trigger('reset')
 }
 
