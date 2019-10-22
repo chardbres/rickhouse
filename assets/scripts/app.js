@@ -13,7 +13,10 @@ $(() => {
   $('.change-password').on('submit', authEvents.onPasswordChange)
   $('.sign-out').on('submit', authEvents.onSignOut)
   // CRUD applications
-  $('.entry-fields').on('submit', whiskeyEvents.onCreate)
+  $('.entry-fields').on('submit', whiskeyEvents.onCreateWhiskey)
+  $('.get-whiskey').on('submit', whiskeyEvents.onGetWhiskey)
   $('.get-whiskies').on('submit', whiskeyEvents.onGetWhiskies)
-  $('.destroy-whiskey').on('submit', whiskeyEvents.onDeleteWhiskey)
+  $('.canvas').on('click', '.items', whiskeyEvents.makeAlterable)
+  $('.delete-whiskey').on('submit', whiskeyEvents.onDeleteWhiskey)
+  $('.update-whiskey').on('submit', whiskeyEvents.onUpdateWhiskey)
 })

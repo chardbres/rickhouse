@@ -5,6 +5,10 @@ $title-color: #fbf9f9;
 $list-color: #fff;
 $theme-font: 'Special Elite', sans-serif;
 
+.alterable {
+  background-color: #d3d3d3;
+}
+
 body {
   background-color: #000;
 
@@ -16,8 +20,11 @@ body {
 }
 
 .buffer {
-  // border: 3px solid blue;
   height: 8vh;
+}
+
+button {
+  margin: 2px;
 }
 
 .canvas {
@@ -45,7 +52,6 @@ body {
 
 .content {
   align-items: center;
-  // border: 2px solid green;
   display: flex;
   flex-direction: column;
   height: 70vh;
@@ -120,10 +126,18 @@ form {
   width: 10%;
 }
 
-.whiskies {
-  margin: .5% 1% .5% 1%;
+.rud-buttons {
+  display: flex;
+  margin: auto;
+  width: 50%;
+}
 
-  .items:hover {
-    background-color: #d3d3d3;
+.whiskies {
+  .items {
+    padding: 0 0 0 1%;
+
+    &:hover {
+      background-color: #d3d3d3;
+    }
   }
 }

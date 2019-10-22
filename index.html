@@ -83,15 +83,25 @@
           <input type="text" name="whiskey[age]" placeholder="Whiskey age" />
           <input type="text" name="whiskey[taste]" placeholder="Taste profile" />
           <input type="text" name="whiskey[price]" placeholder="Whiskey price" />
-          <button type="submit">Submit Whiskey</button>
+          <button class="create=whiskey" type="submit">Submit Whiskey</button>
         </form>
-        <form class="get-whiskies">
-          <button type="submit">Get list of whiskies</button>
-        </form>
-        <form class="destroy-whiskies">
-          <input type="number" name="whiskey[id]" placeholder="Whiskey ID" />
-          <button type="submit">Delete whiskey</button>
-        </form>
+
+        <div class="rud-buttons">
+          <form class="update-whiskey">
+            <button type="submit">Update Whiskey</button>
+          </form>
+          <form class="delete-whiskey">
+            <button type="submit">Delete whiskey</button>
+          </form>
+          <form class="get-whiskey">
+            <input type="text" name="whiskey[id]" placeholder="Whiskey ID" />
+            <button type="submit">Get single whiskey</button>
+          </form>
+          <form class="get-whiskies">
+            <button type="submit">Get all whiskies</button>
+          </form>
+        </div>
+
       </div>
     </body>
 </html>

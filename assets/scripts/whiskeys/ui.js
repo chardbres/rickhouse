@@ -1,5 +1,6 @@
 'use strict'
 
+const api = require('./api.js')
 const store = require('../store')
 const whiskeysPageTemplate = require('../templates/whiskey-listing.handlebars')
 
@@ -8,7 +9,7 @@ const onCreateWhiskeySuccess = responseData => {
   console.log('Successfully created!')
   store.whiskey = responseData.whiskey
   $('.message').text('...whiskey created successfully.')
-  console.log(responseData)
+  $('.entry-fields').trigger('reset')
 }
 
 const onCreateWhiskeyFailure = () => {
@@ -16,18 +17,44 @@ const onCreateWhiskeyFailure = () => {
 }
 // ---
 
+// Get single whiskey success and failure UI
+const onGetWhiskeySuccess = responseData => {
+  // store.whiskey = responseData.whiskeys
+  console.log(responseData)
+
+  // Hack that recasts the single object responseData as an array, which works with my handlebars script
+  const whiskeys = [responseData.whiskey]
+  const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: whiskeys })
+  $('.canvas').hide().html(whiskeysPageHtml).fadeIn(1000)
+}
+// ---
+
 // Whiskey indexing success and failure UI
 const onGetWhiskiesSuccess = responseData => {
-  console.log('Got whiskies!')
   store.whiskey = responseData.whiskey
   console.log(responseData)
 
   const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: responseData.whiskeys })
   $('.canvas').hide().html(whiskeysPageHtml).fadeIn(1000)
 }
+// ---
+
+const onDeleteSuccess = () => {
+  api.getWhiskies()
+    .then(onGetWhiskiesSuccess())
+  console.log('Made it here!')
+}
+
+const onUpdateSuccess = responseData => {
+  api.getWhiskies()
+    .then(onGetWhiskiesSuccess())
+}
 
 module.exports = {
   onCreateWhiskeySuccess,
   onCreateWhiskeyFailure,
-  onGetWhiskiesSuccess
+  onGetWhiskeySuccess,
+  onGetWhiskiesSuccess,
+  onDeleteSuccess,
+  onUpdateSuccess
 }

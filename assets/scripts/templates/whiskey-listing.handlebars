@@ -1,12 +1,12 @@
   <div class="whiskies overflow-auto">
     {{#each whiskeys as |whiskey|}}
-      <div class="items" style="border: 1px solid gray">
-        {{whiskey.id}} -
-        NAME: {{whiskey.name}} _
-        VARIETY: {{whiskey.variety}} _
-        REGION: {{whiskey.region}} _
-        AGE: {{whiskey.age}} _
-        TASTE: {{whiskey.taste}} _
+      <div class="items" id={{whiskey.id}} style="border: 1px solid gray">
+        ID-{{whiskey.id}} |
+        NAME: {{whiskey.name}} |
+        VARIETY: {{whiskey.variety}} |
+        REGION: {{whiskey.region}} |
+        AGE: {{whiskey.age}} |
+        TASTE: {{whiskey.taste}} |
         PRICE: {{whiskey.price}}
       </div>
     {{/each}}
