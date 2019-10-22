@@ -3,40 +3,42 @@
 const store = require('../store')
 
 // Sign-up success and failure UI
-const onSignUpSucces = () => {
+const onSignUpSuccess = () => {
   $('.sign-up').trigger('reset')
-  console.log('Signed up successfully!')
+  $('.auth-message').text('signed up. sign-in to start tracking your whiskey.').fadeIn(800, function () { $('.auth-message').delay(1000).fadeOut(2000) })
 }
 
 const onSignUpFailure = () => {
   $('.sign-up').trigger('reset')
-  console.log('Failed to sign up!')
+  $('.auth-message').text('failed to sign up. email already taken, or passwords do not match.').fadeIn(800, function () { $('.auth-message').delay(1000).fadeOut(2000) })
 }
 // ---
 
 // Sign-in success and failure UI
 const onSignInSuccess = responseData => {
   store.user = responseData.user
-  console.log('Successful sign-in!')
   // Successful sign-in shows the password change/sign-out fields
   $('.sign-in').trigger('reset')
   $('.sign-in, .sign-up').hide()
+  $('.auth-message').text('successfully signed in.').fadeIn(800, function () { $('.auth-message').delay(1000).fadeOut(2000) })
+  $('.chart-title').fadeIn(800)
   $('.change-password, .sign-out').show()
 }
 
 const onSignInFailure = () => {
-  console.log('Sign-in failure!')
+  $('.sign-in').trigger('reset')
+  $('.auth-message').text('could not sign in. check credentials.').fadeIn(800, function () { $('.auth-message').delay(1000).fadeOut(2000) })
 }
 // ---
 
 // Password change success and failure UI
 const onPasswordChangeSuccess = () => {
-  console.log('Password changed successfully!')
+  console.log('password changed successfully.').fadeIn(800, function () { $('.auth-message').delay(1000).fadeOut(2000) })
   $('.change-password').trigger('reset')
 }
 
 const onPasswordChangeFailure = () => {
-  console.log('Failed to change password!')
+  console.log('failed to change password.')
 }
 // ---
 
@@ -53,7 +55,7 @@ const onSignOutFailure = () => {
 // ---
 
 module.exports = {
-  onSignUpSucces,
+  onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,

@@ -7,7 +7,9 @@ $(() => {
   // Page initializations
   $('.change-password').hide()
   $('.sign-out').hide()
+  $('.chart-title').hide()
   // Authorization applications
+  $('.navbar-toggler').on('click', function () { $('.auth-message').delay(200).fadeOut(800) })
   $('.sign-up').on('submit', authEvents.onSignUp)
   $('.sign-in').on('submit', authEvents.onSignIn)
   $('.change-password').on('submit', authEvents.onPasswordChange)
