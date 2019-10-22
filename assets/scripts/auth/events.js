@@ -14,7 +14,7 @@ const onSignUp = event => {
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
 }
-// ---
+// -----------------------------------------
 
 // Sign-in event handler
 const onSignIn = event => {
@@ -26,7 +26,7 @@ const onSignIn = event => {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
-// ---
+// -----------------------------------------
 
 // Password change event handler
 const onPasswordChange = event => {
@@ -38,7 +38,7 @@ const onPasswordChange = event => {
     .then(ui.onPasswordChangeSuccess)
     .catch(ui.onPasswordChangeFailure)
 }
-// ---
+// -----------------------------------------
 
 // Sign-out event handler
 const onSignOut = event => {
@@ -50,6 +50,7 @@ const onSignOut = event => {
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
 }
+// -----------------------------------------
 
 module.exports = {
   onSignUp,
