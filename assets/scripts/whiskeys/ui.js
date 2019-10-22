@@ -6,55 +6,84 @@ const whiskeysPageTemplate = require('../templates/whiskey-listing.handlebars')
 
 // Whiskey creation success and failure UI
 const onCreateWhiskeySuccess = responseData => {
-  console.log('Successfully created!')
   store.whiskey = responseData.whiskey
-  $('.message').text('...whiskey created successfully.')
+  api.getWhiskies()
+    .then(onGetWhiskiesSuccess)
+  $('.message').text('whiskey created successfully.')
   $('.entry-fields').trigger('reset')
 }
 
 const onCreateWhiskeyFailure = () => {
-  console.log('Failed to create whiskey!')
+  $('.message').text('failed to create whiskey!')
 }
-// ---
+// -----------------------------------------
 
 // Get single whiskey success and failure UI
 const onGetWhiskeySuccess = responseData => {
-  // store.whiskey = responseData.whiskeys
-  console.log(responseData)
-
   // Hack that recasts the single object responseData as an array, which works with my handlebars script
   const whiskeys = [responseData.whiskey]
   const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: whiskeys })
-  $('.canvas').hide().html(whiskeysPageHtml).fadeIn(1000)
+  $('.canvas').html(whiskeysPageHtml)
+  $('.message').text('here is your requested whiskey. it must be a fine dram.')
 }
-// ---
+
+const onGetWhiskeyFailure = () => {
+  $('.message').text('failed to retrieve whiskey.')
+}
+// -----------------------------------------
 
 // Whiskey indexing success and failure UI
 const onGetWhiskiesSuccess = responseData => {
-  store.whiskey = responseData.whiskey
-  console.log(responseData)
+  store.whiskeys = responseData.whiskeys
 
   const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: responseData.whiskeys })
-  $('.canvas').hide().html(whiskeysPageHtml).fadeIn(1000)
-}
-// ---
-
-const onDeleteSuccess = () => {
-  api.getWhiskies()
-    .then(onGetWhiskiesSuccess())
-  console.log('Made it here!')
+  $('.canvas').html(whiskeysPageHtml)
 }
 
-const onUpdateSuccess = responseData => {
-  api.getWhiskies()
-    .then(onGetWhiskiesSuccess())
+const onGetWhiskiesFailure = () => {
+  $('.message').text('failed to retrieve whiskies. what a tragedy.')
 }
+// -----------------------------------------
+
+// Whiskey deletion success and failure UI
+const onDeleteWhiskeySuccess = () => {
+  api.getWhiskies()
+    .then(onGetWhiskiesSuccess)
+  $('.message').text('whiskey destroyed. only the best will do.')
+}
+
+const onDeleteWhiskeyFailure = () => {
+  $('.message').text('failed to delete whiskey.')
+}
+// -----------------------------------------
+
+// Whiskey update success and failure UI
+const onUpdateWhiskeySuccess = () => {
+  api.getWhiskies()
+    .then(onGetWhiskiesSuccess)
+  console.log('Made it!')
+  $('.entry-fields').trigger('reset')
+  $('.message').text('whiskey updated. try to get it right the first time.')
+}
+
+const onUpdateWhiskeyFailure = () => {
+  $('.message').text('failed to update whiskey. some drams are too powerful to change.')
+}
+// -----------------------------------------
 
 module.exports = {
+  // Create exports
   onCreateWhiskeySuccess,
   onCreateWhiskeyFailure,
+  // Read exports
   onGetWhiskeySuccess,
+  onGetWhiskeyFailure,
   onGetWhiskiesSuccess,
-  onDeleteSuccess,
-  onUpdateSuccess
+  onGetWhiskiesFailure,
+  // Delete exports
+  onDeleteWhiskeySuccess,
+  onDeleteWhiskeyFailure,
+  // Update exports
+  onUpdateWhiskeySuccess,
+  onUpdateWhiskeyFailure
 }

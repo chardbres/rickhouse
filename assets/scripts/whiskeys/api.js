@@ -14,6 +14,7 @@ const createWhiskey = formData => {
     data: formData
   })
 }
+// -----------------------------------------
 
 const getWhiskey = formData => {
   return $.ajax({
@@ -24,6 +25,7 @@ const getWhiskey = formData => {
     }
   })
 }
+// -----------------------------------------
 
 // Function indexes the database of whiskies
 const getWhiskies = () => {
@@ -35,6 +37,7 @@ const getWhiskies = () => {
     }
   })
 }
+// -----------------------------------------
 
 const deleteWhiskey = whiskeyId => {
   return $.ajax({
@@ -45,6 +48,7 @@ const deleteWhiskey = whiskeyId => {
     }
   })
 }
+// -----------------------------------------
 
 const updateWhiskey = (formData, whiskeyId) => {
   return $.ajax({
@@ -56,6 +60,7 @@ const updateWhiskey = (formData, whiskeyId) => {
     data: formData
   })
 }
+// -----------------------------------------
 
 module.exports = {
   createWhiskey,

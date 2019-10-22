@@ -6,13 +6,10 @@ const ui = require('./ui.js')
 
 // Removes existing '.alterable' class from the div and adds it to another, so that there is only one '.alterable' div at any time.
 const makeAlterable = event => {
-  if ($(event.target).class === '.alterable') {
-    $(event.target).removeClass('alterable')
-  } else {
-    $('.alterable').removeClass('alterable')
-    $(event.target).toggleClass('alterable', true)
-  }
+  $('.alterable').removeClass('alterable')
+  $(event.target).toggleClass('alterable', true)
 }
+// -----------------------------------------
 
 // Script to create a new whiskey
 const onCreateWhiskey = event => {
@@ -20,10 +17,9 @@ const onCreateWhiskey = event => {
 
   api.createWhiskey(getFormFields(event.target))
     .then(ui.onCreateWhiskeySuccess)
-    .then(api.getWhiskies())
     .catch(ui.onCreateWhiskeyFailure)
 }
-// ---
+// -----------------------------------------
 
 // Script to return a single whiskey
 const onGetWhiskey = event => {
@@ -33,7 +29,7 @@ const onGetWhiskey = event => {
     .then(ui.onGetWhiskeySuccess)
     .catch(ui.onGetWhiskeyFailure)
 }
-// ---
+// -----------------------------------------
 
 // Script to return an index of all whiskies
 const onGetWhiskies = event => {
@@ -43,7 +39,7 @@ const onGetWhiskies = event => {
     .then(ui.onGetWhiskiesSuccess)
     .catch(ui.onGetWhiskiesFailure)
 }
-// ---
+// -----------------------------------------
 
 // Script to delete a whiskey
 const onDeleteWhiskey = event => {
@@ -52,23 +48,22 @@ const onDeleteWhiskey = event => {
   // Gets the whiskey ID by the html ID attribute
   const whiskeyId = $('.alterable').attr('id')
   api.deleteWhiskey(whiskeyId)
-    .then(ui.onDeleteSuccess)
-    .catch(ui.onDeleteFailure)
+    .then(ui.onDeleteWhiskeySuccess)
+    .catch(ui.onDeleteWhiskeyFailure)
 }
-// ---
+// -----------------------------------------
 
 // Script to update a whiskey
 const onUpdateWhiskey = event => {
   event.preventDefault()
 
-  console.log($('.entry-fields'))
   const whiskeyId = $('.alterable').attr('id')
   const formData = getFormFields($('.entry-fields')[0])
   api.updateWhiskey(formData, whiskeyId)
-    .then(ui.onUpdateSuccess)
-    .catch(ui.onUpdateFailure)
+    .then(ui.onUpdateWhiskeySuccess)
+    .catch(ui.onUpdateWhiskeyFailure)
 }
-// ---
+// -----------------------------------------
 
 module.exports = {
   onCreateWhiskey,
