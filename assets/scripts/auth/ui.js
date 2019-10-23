@@ -26,9 +26,10 @@ const onSignInSuccess = responseData => {
   // Successful sign-in shows the password change/sign-out fields
   $('.sign-in').trigger('reset')
   $('.sign-in, .sign-up').hide()
-  $('.auth-message').text('signed in.').fadeIn(800, fadeFunc)
-  $('.chart-title').fadeIn(800)
   $('.change-password, .sign-out').show()
+  // ---
+  $('.auth-message').text('signed in.').fadeIn(800, fadeFunc)
+  $('.chart-title, .entry-fields, .rud-buttons').fadeIn(1000)
   // Get full list of user whiskies on sign-in
   whiskeyApi.getWhiskies()
     .then(whiskeyUi.onGetWhiskiesSuccess)
@@ -59,7 +60,7 @@ const onSignOutSuccess = () => {
   $('.auth-message').text('signed out.').fadeIn(800)
   // Fills div with the original html that was saved on sign-in
   $('.canvas').html(divClone)
-  $('.chart-title').fadeOut(800)
+  $('.chart-title, .entry-fields, .rud-buttons').fadeOut(1000)
   $('.message').text('goodbye.')
 }
 

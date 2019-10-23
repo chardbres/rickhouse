@@ -24,11 +24,13 @@ const onGetWhiskeySuccess = responseData => {
   const whiskeys = [responseData.whiskey]
   const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: whiskeys })
   $('.canvas').html(whiskeysPageHtml)
+  $('.get-whiskey').trigger('reset')
   $('.message').text('here is your requested whiskey. it must be a fine dram.')
 }
 
 const onGetWhiskeyFailure = () => {
   $('.message').text('failed to retrieve whiskey.')
+  $('.get-whiskey').trigger('reset')
 }
 // -----------------------------------------
 

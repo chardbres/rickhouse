@@ -5,9 +5,9 @@ const whiskeyEvents = require('./whiskeys/events.js')
 
 $(() => {
   // Page initializations
-  $('.change-password').hide()
-  $('.sign-out').hide()
-  $('.chart-title').hide()
+  $('.change-password, .sign-out, .chart-title, .entry-fields, .rud-buttons').hide()
+  // $('.sign-out').hide()
+  // $('.chart-title').hide()
   // Authorization applications
   $('.navbar-toggler').on('click', function () { $('.auth-message').delay(200).fadeOut(800) })
   $('.sign-up').on('submit', authEvents.onSignUp)
