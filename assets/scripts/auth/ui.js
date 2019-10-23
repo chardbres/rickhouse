@@ -10,12 +10,12 @@ const fadeFunc = () => { $('.auth-message').delay(1000).fadeOut(2000) }
 // Sign-up success and failure UI
 const onSignUpSuccess = () => {
   $('.sign-up').trigger('reset')
-  $('.auth-message').text('signed up. sign-in to start tracking your whiskey.').fadeIn(800, fadeFunc())
+  $('.auth-message').text('signed up. sign-in to start tracking your whiskey.').fadeIn(800, fadeFunc)
 }
 
 const onSignUpFailure = () => {
   $('.sign-up').trigger('reset')
-  $('.auth-message').text('failed to sign up. email already taken, or passwords do not match.').fadeIn(800, fadeFunc())
+  $('.auth-message').text('failed to sign up. email already taken, or passwords do not match.').fadeIn(800, fadeFunc)
 }
 // -----------------------------------------
 
@@ -26,7 +26,7 @@ const onSignInSuccess = responseData => {
   // Successful sign-in shows the password change/sign-out fields
   $('.sign-in').trigger('reset')
   $('.sign-in, .sign-up').hide()
-  $('.auth-message').text('signed in.').fadeIn(800, fadeFunc())
+  $('.auth-message').text('signed in.').fadeIn(800, fadeFunc)
   $('.chart-title').fadeIn(800)
   $('.change-password, .sign-out').show()
   // Get full list of user whiskies on sign-in
@@ -37,18 +37,18 @@ const onSignInSuccess = responseData => {
 
 const onSignInFailure = () => {
   $('.sign-in').trigger('reset')
-  $('.auth-message').text('could not sign in. check credentials.').fadeIn(800, fadeFunc())
+  $('.auth-message').text('could not sign in. check credentials.').fadeIn(800, fadeFunc)
 }
 // -----------------------------------------
 
 // Password change success and failure UI
 const onPasswordChangeSuccess = () => {
-  $('.auth-message').text('password changed successfully.').fadeIn(800, fadeFunc())
+  $('.auth-message').text('password changed successfully.').fadeIn(800, fadeFunc)
   $('.change-password').trigger('reset')
 }
 
 const onPasswordChangeFailure = () => {
-  $('.auth-message').text('failed to change password.').fadeIn(800, fadeFunc())
+  $('.auth-message').text('failed to change password.').fadeIn(800, fadeFunc)
 }
 // -----------------------------------------
 
@@ -64,7 +64,7 @@ const onSignOutSuccess = () => {
 }
 
 const onSignOutFailure = () => {
-  $('.auth-message').text('failed to sign out.').fadeIn(800, fadeFunc())
+  $('.auth-message').text('failed to sign out.').fadeIn(800, fadeFunc)
 }
 // -----------------------------------------
 
