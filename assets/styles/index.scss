@@ -6,11 +6,10 @@ $list-color: #fff;
 $theme-font: 'Special Elite', sans-serif;
 
 .alterable {
-  background-color: #808080;
+  background-color: #d3d3d3;
 }
 
 body {
-  background-color: #000;
 
   img {
     position: absolute;
@@ -117,6 +116,11 @@ form {
 
 .pos-f-t {
   z-index: 50;
+}
+
+::placeholder {
+  color: #000;
+  opacity: 1;
 }
 
 .submission {

@@ -1,6 +1,6 @@
 README
 
-[Link to deployed client site!]('https://chardbres.github.io/project_2_client/')
+[Link to deployed client site!]("https://chardbres.github.io/project_2_client/")
 [Link to Heroku site!]('https://dry-scrubland-57892.herokuapp.com/whiskeys')
 
 Rickhouse: an app to track your favorite Whiskies
@@ -28,6 +28,8 @@ Timeline:
 (2019-10-21) - Day was largely spent on debugging. Completed functionality to create a new whiskey and index all whiskies in the database for a single user. Produced Handlebars script to display results of indexing full whiskey list on page.
 
 (2019-10-22) - Completed remaining event functionality: single user can now update a whiskey and get data for a single whiskey by ID. Final code cleanup: page styling, dynamic UI responses, and general quality-of-life improvements to code base.
+
+(2019-10-23) - Lots of post-submission cleanup and general improvements.
 
 Unsolved problems/wish-list:
 1. Would like to be able to select a whiskey from the displayed list of all user whiskies, and trigger a pop-up with more detailed information (like a full description, taste rating, etc.) plus a picture of the bottle.

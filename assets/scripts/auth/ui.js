@@ -33,7 +33,6 @@ const onSignInSuccess = responseData => {
   // Get full list of user whiskies on sign-in
   whiskeyApi.getWhiskies()
     .then(whiskeyUi.onGetWhiskiesSuccess)
-  $('.message').text('here are your whiskies. lucky you.')
 }
 
 const onSignInFailure = () => {

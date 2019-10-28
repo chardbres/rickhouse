@@ -9,7 +9,7 @@ const onCreateWhiskeySuccess = responseData => {
   store.whiskey = responseData.whiskey
   api.getWhiskies()
     .then(onGetWhiskiesSuccess)
-  $('.message').text('whiskey created. ')
+  $('.message').text('whiskey created.')
   $('.entry-fields').trigger('reset')
 }
 
@@ -40,6 +40,9 @@ const onGetWhiskiesSuccess = responseData => {
 
   const whiskeysPageHtml = whiskeysPageTemplate({ whiskeys: responseData.whiskeys })
   $('.canvas').html(whiskeysPageHtml)
+  if (responseData.whiskeys.length === 0) {
+    $('.message').text('no whiskies saved yet. create a whiskey to start your list.')
+  }
 }
 
 const onGetWhiskiesFailure = () => {
@@ -52,6 +55,7 @@ const onDeleteWhiskeySuccess = () => {
   api.getWhiskies()
     .then(onGetWhiskiesSuccess)
   $('.message').text('whiskey destroyed. only the best will do.')
+  $('.input').removeClass('alterable')
 }
 
 const onDeleteWhiskeyFailure = () => {
@@ -65,6 +69,7 @@ const onUpdateWhiskeySuccess = () => {
     .then(onGetWhiskiesSuccess)
   console.log('Made it!')
   $('.entry-fields').trigger('reset')
+  $('.input').removeClass('alterable')
   $('.message').text('whiskey updated. try to get it right the first time.')
 }
 

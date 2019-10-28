@@ -6,8 +6,14 @@ const ui = require('./ui.js')
 
 // Removes existing '.alterable' class from the div and adds it to another, so that there is only one '.alterable' div at any time.
 const makeAlterable = event => {
-  $('.alterable').removeClass('alterable')
-  $(event.target).addClass('alterable')
+  if ($(event.target).hasClass('alterable')) {
+    $('.items').removeClass('alterable')
+    $('.input').removeClass('alterable')
+  } else {
+    $('.items').removeClass('alterable')
+    $(event.target).addClass('alterable')
+    $('.input').addClass('alterable')
+  }
 }
 // -----------------------------------------
 
