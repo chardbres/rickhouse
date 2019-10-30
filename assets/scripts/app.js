@@ -21,4 +21,6 @@ $(() => {
   $('.canvas').on('click', '.items', whiskeyEvents.makeAlterable)
   $('.delete-whiskey').on('submit', whiskeyEvents.onDeleteWhiskey)
   $('.update-whiskey').on('submit', whiskeyEvents.onUpdateWhiskey)
+  // Putting this here for now, otherwise it creates annoying problems if in onGetWhiskiesSuccess
+  $('.get-whiskies').on('click', function () { $('.message').text('here are your whiskies.') })
 })

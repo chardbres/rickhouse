@@ -9,12 +9,13 @@ const makeAlterable = event => {
   if ($(event.target).hasClass('alterable')) {
     $('.items').removeClass('alterable')
     $('.input').removeClass('alterable')
+    $('.toggler').attr('disabled', false)
   } else {
     $('.items').removeClass('alterable')
     $(event.target).addClass('alterable')
     $('.input').addClass('alterable')
     $('.message').text('use forms below to update whiskey.')
-    $('.create-whiskey, .delete-whiskey, .get-whiskey, .get-whiskies').attr('disabled', true)
+    $('.toggler ').attr('disabled', true)
   }
 }
 // -----------------------------------------

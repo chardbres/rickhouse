@@ -9,7 +9,7 @@ const onCreateWhiskeySuccess = responseData => {
   store.whiskey = responseData.whiskey
   api.getWhiskies()
     .then(onGetWhiskiesSuccess)
-  $('.message').text('whiskey created.')
+  $('.message').text('whiskey created. here is your updated list.')
   $('.entry-fields').trigger('reset')
 }
 
@@ -54,8 +54,9 @@ const onGetWhiskiesFailure = () => {
 const onDeleteWhiskeySuccess = () => {
   api.getWhiskies()
     .then(onGetWhiskiesSuccess)
-  $('.message').text('whiskey destroyed. only the best will do.')
+  $('.message').text('whiskey destroyed, only the best will do. here is your updated list.')
   $('.input').removeClass('alterable')
+  $('.toggler').attr('disabled', false)
 }
 
 const onDeleteWhiskeyFailure = () => {
@@ -70,7 +71,8 @@ const onUpdateWhiskeySuccess = () => {
   console.log('Made it!')
   $('.entry-fields').trigger('reset')
   $('.input').removeClass('alterable')
-  $('.message').text('whiskey updated. try to get it right the first time.')
+  $('.toggler').attr('disabled', false)
+  $('.message').text('whiskey updated, try to get it right the first time. here is your updated list.')
 }
 
 const onUpdateWhiskeyFailure = () => {
