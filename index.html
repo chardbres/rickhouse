@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Rickhouse</title>
+      <!-- Embedding font for the page title -->
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato|Poiret+One|Roboto|Special+Elite&display=swap');
+      </style>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <img src='https://lovelaughandphotograph.files.wordpress.com/2013/11/barnwood-background-grey.jpg?w=1200'>
+      <header>
+        <h1>rickhouse.</h1>
+      </header>
+    <!-- Defines the nav dropdown with the hamburger -->
+      <div class="pos-f-t fixed-top">
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <p class="auth-message">welcome to rickhouse. use dropdown menu to sign up or sign in.</p>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <!-- Sign-up form -->
+            <form class="sign-up">
+              <input type="text" name="credentials[email]" placeholder="Enter e-mail" />
+              <input type="password" name="credentials[password]" placeholder="Enter password"  />
+              <input type="password" name="credentials[password_confirmation]" placeholder="Re-enter password"  />
+              <button type="submit">Sign Up!</button>
+            </form>
+            <!-- Sign-in form -->
+            <form class="sign-in">
+              <input type="text" name="credentials[email]" placeholder="Enter e-mail" />
+              <input type="password" name="credentials[password]" placeholder="Enter password"  />
+              <button type="submit" data-toggle="collapse" data-target="#navbarToggleExternalContent">Sign In!</button>
+            </form>
+            <!-- Password change form -->
+            <form class="change-password">
+              <input type="password" name="passwords[old]" placeholder="Enter old password..."  />
+              <input type="password" name="passwords[new]" placeholder="Enter new password..."  />
+              <button type="submit" data-toggle="collapse" data-target="#navbarToggleExternalContent">Change Password</button>
+            </form>
+            <!-- Sign-out form -->
+            <form class="sign-out">
+              <button type="submit" data-toggle="collapse" data-target="#navbarToggleExternalContent">Sign Out!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <!--        End of navbar        -->
+
+    <!-- Start of main content -->
+      <div class="main">
+        <div class="buffer">
+        </div>
+        <div class="content">
+          <h1 class="chart-title">your whiskies.</h1>
+          <div class="canvas overflow-auto">
+            <div class="img-div">
+              <img src='https://images-na.ssl-images-amazon.com/images/I/71D5rtExINL._SX466_.jpg'>
+            </div>
+          </div>
+        </div>
+
+        <div class="message">
+          <p>too much of anything is bad, but too much good whiskey is barely enough. -Mark Twain</p>
+        </div>
+
+        <form class="entry-fields">
+          <input class="input" type="text" name="whiskey[name]" placeholder="Whiskey name" />
+          <input class="input" type="text" name="whiskey[variety]" placeholder="Whiskey variety (scotch, etc.)" />
+          <input class="input" type="text" name="whiskey[region]" placeholder="Whiskey region" />
+          <input class="input" type="text" name="whiskey[age]" placeholder="Whiskey age" />
+          <input class="input" type="text" name="whiskey[taste]" placeholder="Taste profile" />
+          <input class="input" type="text" name="whiskey[price]" placeholder="Whiskey price" />
+          <button class="create-whiskey btn btn-success toggler" type="submit">Submit Whiskey</button>
+        </form>
+
+        <div class="rud-buttons">
+          <form class="update-whiskey">
+            <button class="btn btn-light" type="submit">Update Whiskey</button>
+          </form>
+          <form class="delete-whiskey">
+            <button class="btn btn-danger" type="submit">Delete whiskey</button>
+          </form>
+          <form class="get-whiskey">
+            <input type="text" name="whiskey[id]" placeholder="Whiskey ID" />
+            <button class="btn btn-light toggler" type="submit">Get single whiskey</button>
+          </form>
+          <form class="get-whiskies">
+            <button class="btn btn-light toggler" type="submit">Get all whiskies</button>
+          </form>
+        </div>
+
+      </div>
+    </body>
+</html>
