@@ -68,7 +68,6 @@ const onDeleteWhiskeyFailure = () => {
 const onUpdateWhiskeySuccess = () => {
   api.getWhiskies()
     .then(onGetWhiskiesSuccess)
-  console.log('Made it!')
   $('.entry-fields').trigger('reset')
   $('.input').removeClass('alterable')
   $('.toggler').attr('disabled', false)
